@@ -29,6 +29,11 @@ int main()
 
   cout << "A teraz istnieje " << Point::numberOfPoints() << " punktow." << endl;
 
+  Point srodek("S", 4, 5.6);
+  Point punktObwodu("O", 30.1, 3.2);
+
+  Point::createCircleFromPoints(srodek, punktObwodu);
+
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
