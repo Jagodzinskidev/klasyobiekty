@@ -15,9 +15,10 @@ public:
   ~Point();
   void setName(const std::string& name);
   void setXY(double x, double y);
-  double getX();
-  double getY();
+  double getX() const;
+  double getY() const;
   void show() const;
   double distance(const Point& p) const;
   const Point& distant(const Point& p) const;
+  static void createCircleFromPoints(const Point& center, const Point& onCircumference);
 };

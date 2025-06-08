@@ -31,11 +31,11 @@ void Point::setXY(double x, double y) {
   m_y = y;
 }
 
-double Point::getX() {
+double Point::getX() const {
   return m_x;
 }
 
-double Point::getY() {
+double Point::getY() const {
   return m_y;
 }
 
@@ -59,4 +59,17 @@ const Point& Point::distant(const Point& p) const {
 
 int Point::numberOfPoints() {
   return Point::m_numberOfPoints;
+}
+
+void Point::createCircleFromPoints(const Point& center, const Point& onCircumference) {
+  double radius = center.distance(onCircumference);
+  double area = M_PI * radius * radius;
+  double circumference = 2 * M_PI * radius;
+
+  std::cout << "Tworzenie kola na podstawie punktu srodka (" << center.getX() << ", " << center.getY() << ")"
+            << " i punktu na obwodzie (" << onCircumference.getX() << ", " << onCircumference.getY() << ")\n";
+
+  std::cout << "Promien: " << radius << "\n";
+  std::cout << "Obwod: " << circumference << "\n";
+  std::cout << "Pole powierzchni: " << area << "\n";
 }
